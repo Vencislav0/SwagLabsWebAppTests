@@ -39,7 +39,7 @@ jobs:
          path: ./Reports/test-results.xml
 
      - name: Publish Test Results
-       uses: dorny/test-reporter@v1
+       uses: dorny/test-reporter@v1.8.0
        with:
          name: NUnit Tests
          path: ./Reports/test-results.xml
