@@ -39,7 +39,7 @@ jobs:
           path: SwagLabsProject/Reports/test-results.xml 
 
       - name: Publish Test Results
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v1.8.1
         with:
           name: NUnit Tests
           path: SwagLabsProject/Reports/test-results.xml
