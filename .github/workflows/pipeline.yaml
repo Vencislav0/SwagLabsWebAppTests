@@ -43,6 +43,6 @@ jobs:
         with:
           name: NUnit Tests
           path: SwagLabsProject/Reports/test-results.xml
-          reporter: junit
+          reporter: jest-junit
 
       
