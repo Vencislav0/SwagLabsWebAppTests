@@ -28,9 +28,9 @@ jobs:
         run: dotnet build --no-restore
       
       - name: Run Tests and Generate Test Report
-        run: |
-          mkdir -p Reports
-          dotnet test --logger "trx;LogFilePath=Reports/test-results.trx" --verbosity normal
+        run: |          
+          dotnet test --logger "trx" --results-directory Reports --verbosity normal
+          mv Reports/*.trx Reports/test-results.trx  # Rename the TRX file
       
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
@@ -43,7 +43,7 @@ jobs:
         if: success() || failure()
         with:
           name: NUnit Tests
-          path: SwagLabsProject/Reports/test-results.trx
+          path: SwagLabsProject/Reports/*.trx
           reporter: dotnet-trx
 
       
