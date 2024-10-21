@@ -43,4 +43,4 @@ jobs:
        with:
          name: NUnit Tests
          path: ./Reports/test-results.xml
-         reporter: junit
+         reporter: github-actions
