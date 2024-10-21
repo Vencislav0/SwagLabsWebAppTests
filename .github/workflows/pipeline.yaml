@@ -23,12 +23,6 @@ jobs:
 
      - name: Install dependencies
        run: dotnet restore
-
-     - name: Install JUnit XML Logger
-       run: dotnet tool install --global JunitXml.TestLogger
-
-     - name: Add the installed tool to PATH
-       run: echo "/home/runner/.dotnet/tools" >> $GITHUB_PATH
        
      - name: Build
        run: dotnet build --no-restore
