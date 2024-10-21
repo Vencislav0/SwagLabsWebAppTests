@@ -36,6 +36,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: ./Reports/test-results.xml  
-              
+          path: SwagLabsProject/Reports/test-results.xml  
+
       
