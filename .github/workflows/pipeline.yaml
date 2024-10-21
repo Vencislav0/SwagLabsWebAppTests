@@ -37,3 +37,10 @@ jobs:
        with:
          name: test-results
          path: ./Reports/test-results.xml
+
+     - name: Publish Test Results
+       uses: dorny/test-reporter@v1
+       with:
+         name: NUnit Tests
+         path: ./Reports/test-results.xml
+         reporter: junit
