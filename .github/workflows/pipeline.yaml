@@ -36,14 +36,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: SwagLabsProject/Reports/test-results.trx
+          path: /Reports/*.trx
 
       - name: Publish Test Results
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
           name: NUnit Tests
-          path: SwagLabsProject/Reports/*.trx
+          path: /Reports/*.trx
           reporter: dotnet-trx
 
       
