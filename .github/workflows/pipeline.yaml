@@ -1,3 +1,13 @@
+name: SwagLabs Web Store Pipeline
+
+on:
+  push:
+    branches: 
+     - main
+  pull_request:
+    branches:
+     - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,10 +22,7 @@ jobs:
           dotnet-version: '8.0.x'
       
       - name: Install dependencies
-        run: dotnet restore
-      
-      - name: Install NUnit XML Test Logger
-        run: dotnet tool install --global NUnit.Xml.TestLogger
+        run: dotnet restore            
       
       - name: Build
         run: dotnet build --no-restore
@@ -29,11 +36,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: ./Reports/test-results.xml
+          path: ./Reports/test-results.xml  
+              
       
-      - name: Publish Test Results
-        uses: dorny/test-reporter@v1
-        with:
-          name: NUnit Tests
-          path: ./Reports/test-results.xml
-          reporter: junit
