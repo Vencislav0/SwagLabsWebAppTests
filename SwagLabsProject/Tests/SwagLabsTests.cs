@@ -234,7 +234,7 @@ namespace SwagLabsProject.Tests
             //Assert.That(inventoryPage.AddToCartBackPackButton.Displayed, "Add to cart button was not displayed after removing the item");
 
             Assert.Inconclusive("Test passed without crucial assertions.");
-            Console.WriteLine($"Reset state functionallity failed. Expected \"Remove\" button to revert back to add to cart, but was \"Add to cart\" instead. Please check if the reset state process is working correctly");
+            Console.WriteLine($"Reset state functionallity failed. Expected \"Remove\" button to revert back to \"Add To Cart\", but was \"Remove\" instead. Please check if the reset state process is working correctly");
 
         }
 
